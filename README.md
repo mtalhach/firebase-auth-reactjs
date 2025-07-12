@@ -5,6 +5,7 @@ A modern React application with Firebase authentication, built with Vite and Tai
 ## ✨ Features
 
 - **User Authentication** - Sign up, sign in, password reset
+- **Google Sign-In** - Quick authentication with Google accounts
 - **Email Verification** - Required for account activation
 - **Profile Management** - Update display name, email, and password
 - **Responsive Design** - Works on all devices
@@ -29,7 +30,7 @@ A modern React application with Firebase authentication, built with Vite and Tai
 2. **Configure Firebase**
 
    - Create Firebase project
-   - Enable Authentication (Email/Password)
+   - Enable Authentication (Email/Password + Google)
    - Copy config to `src/firebase/config.jsx`
 
 3. **Start development**
@@ -42,16 +43,18 @@ A modern React application with Firebase authentication, built with Vite and Tai
 ### Creating Account
 
 1. Go to `/signup`
-2. Enter email and password (min 6 chars)
-3. Check email for verification link
-4. Click verification link to activate
+2. Choose Google sign-in or email registration
+3. For email: Enter email and password (min 6 chars)
+4. Check email for verification link
+5. Click verification link to activate
 
 ### Signing In
 
 1. Go to `/signin`
-2. Enter email and password
-3. Use eye icon to toggle password visibility
-4. Click "Sign In"
+2. Choose Google sign-in or email login
+3. For email: Enter email and password
+4. Use eye icon to toggle password visibility
+5. Click "Sign In"
 
 ### Password Reset
 
@@ -106,6 +109,7 @@ src/
 - Password minimum 6 characters
 - Recent login validation for sensitive operations
 - Re-authentication required for email and password changes
+- Google accounts are automatically verified
 
 ## 🔍 Troubleshooting
 
@@ -115,6 +119,7 @@ src/
 - **Can't sign in**: Verify email, check credentials
 - **Email update fails**: Sign out and sign back in
 - **Password update fails**: Ensure current password is correct
+- **Google sign-in blocked**: Allow pop-ups for the site
 
 ### Error Messages
 
@@ -123,6 +128,7 @@ src/
 - "Too many requests" → Wait a few minutes
 - "Requires recent login" → Sign out and back in
 - "Invalid credential" → Check current password
+- "Pop-up blocked" → Allow pop-ups for this site
 
 ## 📄 License
 
