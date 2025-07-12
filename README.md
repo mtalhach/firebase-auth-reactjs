@@ -6,8 +6,7 @@ A modern React application with Firebase authentication, built with Vite and Tai
 
 - **User Authentication** - Sign up, sign in, password reset
 - **Email Verification** - Required for account activation
-- **Profile Management** - Update display name and email
-- **Image Upload** - Profile pictures via Firebase Storage
+- **Profile Management** - Update display name, email, and password
 - **Responsive Design** - Works on all devices
 
 ## 🚀 Quick Start
@@ -31,7 +30,6 @@ A modern React application with Firebase authentication, built with Vite and Tai
 
    - Create Firebase project
    - Enable Authentication (Email/Password)
-   - Enable Storage
    - Copy config to `src/firebase/config.jsx`
 
 3. **Start development**
@@ -66,7 +64,7 @@ A modern React application with Firebase authentication, built with Vite and Tai
 
 - **Update Display Name**: Go to `/profile` → Edit name → Save
 - **Update Email**: Enter new email → Verify → Complete
-- **Upload Image**: Drag/drop or click to upload (max 5MB)
+- **Update Password**: Enter current password → New password → Confirm → Save
 
 ## 🔧 Development
 
@@ -91,8 +89,7 @@ src/
 │   └── ResetPassword.jsx # Password reset
 ├── firebase/
 │   └── config.jsx        # Firebase config
-└── utils/
-    └── ImageUpload.jsx   # File upload
+└── App.jsx               # Main app component
 ```
 
 ### Routes
@@ -108,7 +105,7 @@ src/
 - Email verification required for profile access
 - Password minimum 6 characters
 - Recent login validation for sensitive operations
-- File upload validation (images only, max 5MB)
+- Re-authentication required for email and password changes
 
 ## 🔍 Troubleshooting
 
@@ -117,7 +114,7 @@ src/
 - **Email not verified**: Check spam folder, use resend button
 - **Can't sign in**: Verify email, check credentials
 - **Email update fails**: Sign out and sign back in
-- **Upload fails**: Check file size (5MB max) and type (images only)
+- **Password update fails**: Ensure current password is correct
 
 ### Error Messages
 
@@ -125,6 +122,7 @@ src/
 - "Password too weak" → Use 6+ characters
 - "Too many requests" → Wait a few minutes
 - "Requires recent login" → Sign out and back in
+- "Invalid credential" → Check current password
 
 ## 📄 License
 
